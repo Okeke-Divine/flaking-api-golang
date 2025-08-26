@@ -1,39 +1,45 @@
-# Flaking API
+# Flaking API · [![Go](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://golang.org) [![Gin](https://img.shields.io/badge/Gin-Framework-0096D0?style=flat)](https://gin-gonic.com)
 
-[![Tech Stack](https://skillicons.dev/icons?i=go,mysql,postgres)](https://skillicons.dev)
+> **A Production-Grade RESTful API Boilerplate in Go. Built for Performance, Security, and Scale.**
 
 ## 📖 Overview
-A production-ready RESTful API built with Go and the Gin framework to demonstrate the core backend development concepts, including authentication, database operations, and middleware patterns.
+**Flaking API** is a robust, modular backend API built with **Go** and the **Gin framework**. It implements core production-ready features including JWT authentication, rate limiting, clean database architecture with GORM, and comprehensive RESTful endpoints. It serves as a high-performance foundation for any web or mobile application backend.
 
-## ✨ Features
-- **🔐 Authentication:** Secure JWT-based login & registration
-- **📁 RESTful Endpoints:** Clean CRUD operations for users and posts with pagination
-- **🗄️ Database Integration:** GORM ORM with support for MySQL & PostgreSQL
-- **⚙️ Middleware:** Custom JWT auth, rate limiting, and request validation
-- **🛡️ Security:** Bcrypt password hashing and input sanitization
-- **📦 Extensible Design:** Modular structure for easy maintenance and scalability
+## ⚡ Why Flaking API? The Engineering Choice
 
-## 🛠️ Tech Stack
-- **Language:** Go (Golang)
-- **Framework:** Gin
-- **ORM:** GORM
-- **Database:** MySQL/PostgreSQL
-- **Authentication:** JWT
-- **Password Hashing:** Bcrypt
+| For Your Application ✅ | For You (The Developer) 🔧 |
+| :--- | :--- |
+| **Blazing Fast Performance** – Native Go runtime efficiency. | **Structured for Scale** – Clean, modular architecture (config, controllers, models, middleware). |
+| **Secure by Default** – JWT authentication, bcrypt hashing, input validation. | **Production-Ready Features** – Rate limiting, CORS, centralized error handling. |
+| **Database Agnostic** – Supports MySQL & PostgreSQL via GORM. | **Go & Gin Mastery** – Demonstrates deep understanding of idiomatic Go and a modern framework. |
+| **RESTful Standards** – Predictable, well-documented endpoints for easy integration. | **Minimal & Efficient** – No bloated dependencies; a lean, powerful codebase. |
 
+## 🛠️ Tech Stack & Architecture
+- **Language:** Go 1.25+
+- **Framework:** Gin Gonic
+- **ORM:** GORM (MySQL & PostgreSQL support)
+- **Authentication:** JWT (JSON Web Tokens)
+- **Security:** Bcrypt for password hashing
+- **Middleware:** Custom JWT Auth, Rate Limiting
+
+## 📈 Core Features
+- **🔐 JWT Authentication:** Secure user registration, login, and protected route management.
+- **⏱️ Rate Limiting:** Configurable middleware to protect against abuse and DDoS.
+- **🗃️ Database Operations:** Full CRUD for users and posts with GORM, including pagination and data relations.
+- **✅ Input Validation:** Robust validation for all incoming requests.
+- **🧩 Modular Design:** Separated concerns with clear structure (models, controllers, routes, middleware).
+- **♻️ RESTful Design:** Intuitive API endpoints following industry standards.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Go 1.18+
-- MySQL or PostgreSQL
-- Git
+- Go 1.25+
+- MySQL or PostgreSQL database
 
-### Installation & Setup
-
+### Installation & Local Development
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/Okeke-Divine/flaking-api-golang
+    git clone https://github.com/Okeke-Divine/flaking-api-golang.git
     cd flaking-api-golang
     ```
 
@@ -42,40 +48,63 @@ A production-ready RESTful API built with Go and the Gin framework to demonstrat
     go mod download
     ```
 
-3.  **Set up environment variables:**
+3.  **Configure environment variables:**
     ```bash
     cp .env.example .env
     ```
-    Edit the `.env` file with your database credentials and a secure JWT secret.
+    Edit the `.env` file with your settings:
+    ```bash
+    # Database
+    DB_DRIVER=mysql
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_USER=your_username
+    DB_PASSWORD=your_password
+    DB_NAME=your_database_name
 
-4.  **Set up your database:**
-    Create a new database in your MySQL/PostgreSQL instance matching the name in your `.env` file.
+    # JWT
+    JWT_SECRET=your_very_secure_secret_key_here
 
-5.  **Run the application:**
+    # Server
+    PORT=4000
+    ```
+
+4.  **Run database migrations (if using GORM AutoMigrate):**
+    *   The application will typically create the necessary tables on first run if `AUTO_MIGRATE` is set.
+
+5.  **Start the development server:**
     ```bash
     go run main.go
     ```
     The API server will start on `http://localhost:4000`.
 
-## 📚 API Endpoints
+## 📚 API Endpoints & Documentation
 
+### Authentication Endpoints
 | Method | Endpoint | Description | Auth Required |
 | :--- | :--- | :--- | :---: |
 | `POST` | `/api/v1/auth/register` | Register a new user | No |
 | `POST` | `/api/v1/auth/login` | Login user | No |
+
+### User Endpoints
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :---: |
 | `GET` | `/api/v1/users` | Get all users (public) | No |
 | `GET` | `/api/v1/users/:id` | Get user by ID (public) | No |
-| `GET` | `/api/v1/user/profile` | Get current user profile | Yes |
-| `PUT` | `/api/v1/user/profile` | Update current user | Yes |
-| `DELETE` | `/api/v1/user/profile` | Delete current user | Yes |
+| `GET` | `/api/v1/user/profile` | Get current user profile | **Yes** |
+| `PUT` | `/api/v1/user/profile` | Update current user | **Yes** |
+| `DELETE` | `/api/v1/user/profile` | Delete current user | **Yes** |
+
+### Post Endpoints
+| Method | Endpoint | Description | Auth Required |
+| :--- | :--- | :--- | :---: |
 | `GET` | `/api/v1/posts` | Get all posts (public) | No |
 | `GET` | `/api/v1/posts/:id` | Get post by ID (public) | No |
-| `POST` | `/api/v1/posts` | Create a new post | Yes |
-| `PUT` | `/api/v1/posts/:id` | Update a post (owner only) | Yes |
-| `DELETE` | `/api/v1/posts/:id` | Delete a post (owner only) | Yes |
+| `POST` | `/api/v1/posts` | Create a new post | **Yes** |
+| `PUT` | `/api/v1/posts/:id` | Update a post (owner only) | **Yes** |
+| `DELETE` | `/api/v1/posts/:id` | Delete a post (owner only) | **Yes** |
 
-## 🔐 Authentication
-Protected routes require a JWT token in the Authorization header:
+**🔐 Authentication:** Protected routes require a JWT token in the Authorization header:
 ```http
 Authorization: Bearer <your_jwt_token>
 ```
@@ -107,17 +136,5 @@ curl -X POST http://localhost:4000/api/v1/posts   -H "Content-Type: application/
   }'
 ```
 
-## 📋 What I learnt
-
-- Go's HTTP handling and the Gin framework
-- Structuring large Go applications effectively
-- JWT implementation for stateless authentication
-- Middleware chaining and custom middleware creation
-- Database modeling with GORM and relationships
-- Rate limiting strategies and implementation
-- RESTful API design principles
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
+---
+**Built by [Divine-Vessel](https://github.com/Okeke-Divine)**
