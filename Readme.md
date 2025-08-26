@@ -135,5 +135,14 @@ curl -X POST http://localhost:4000/api/v1/posts   -H "Content-Type: application/
   }'
 ```
 
+## 🧠 Knowledge Demonstrated
+
+- Go Conventions: Proper project structure, error handling, and modular packages.
+- API Design: RESTful principles, clean endpoint design, and HTTP status codes.
+- Database Modeling: ORM usage (GORM), migrations, and relationships.
+- Security: JWT implementation, password hashing (bcrypt), and middleware for auth/rate limiting.
+- Production Readiness: Environment configuration, and scalable architecture.
+
+"
 ---
 **Built by [Divine-Vessel](https://github.com/Okeke-Divine)**
