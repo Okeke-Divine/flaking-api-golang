@@ -3,8 +3,7 @@
 > **A Production-Grade RESTful API Boilerplate in Go. Built for Performance, Security, and Scale.**
 
 ## 📖 Overview
-**Flaking API** is a robust, modular backend API built with **Go** and the **Gin framework**. It implements core production-ready features including JWT authentication, rate limiting, clean database architecture with GORM, and comprehensive RESTful endpoints. It serves as a high-performance foundation for any web or mobile application backend.
-
+**Flaking API** is a robust, modular backend **boilerplate** built with **Go** and the **Gin framework**. It is designed to be cloned and used as a high-performance foundation for building any web or mobile application backend, implementing core production-ready features out of the box.
 ## ⚡ Why Flaking API? The Engineering Choice
 
 | For Your Application ✅ | For You (The Developer) 🔧 |
