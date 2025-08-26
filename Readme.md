@@ -1,4 +1,4 @@
-# Flaking API · [![Go](https://img.shields.io/badge/Go-1.18+-00ADD8?style=flat&logo=go)](https://golang.org) [![Gin](https://img.shields.io/badge/Gin-Framework-0096D0?style=flat)](https://gin-gonic.com)
+# Flaking API · [![Go](https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go)](https://golang.org) [![Gin](https://img.shields.io/badge/Gin-Framework-0096D0?style=flat)](https://gin-gonic.com)
 
 > **A Production-Grade RESTful API Boilerplate in Go. Built for Performance, Security, and Scale.**
 
