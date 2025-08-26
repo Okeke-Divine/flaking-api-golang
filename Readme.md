@@ -143,6 +143,5 @@ curl -X POST http://localhost:4000/api/v1/posts   -H "Content-Type: application/
 - Security: JWT implementation, password hashing (bcrypt), and middleware for auth/rate limiting.
 - Production Readiness: Environment configuration, and scalable architecture.
 
-"
 ---
 **Built by [Divine-Vessel](https://github.com/Okeke-Divine)**
