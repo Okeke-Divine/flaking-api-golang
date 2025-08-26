@@ -1,6 +1,6 @@
 # Flaking API
 
-[![Tech Stack](https://skillicons.dev/icons?i=go,mysql,postgres,docker)](https://skillicons.dev)
+[![Tech Stack](https://skillicons.dev/icons?i=go,mysql,postgres)](https://skillicons.dev)
 
 ## 📖 Overview
 A production-ready RESTful API built with Go and the Gin framework to demonstrate the core backend development concepts, including authentication, database operations, and middleware patterns.
