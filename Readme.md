@@ -78,7 +78,7 @@ A production-ready RESTful API built with Go and the Gin framework to demonstrat
 Protected routes require a JWT token in the Authorization header:
 ```http
 Authorization: Bearer <your_jwt_token>
-
+```
 
 ## 🧪 Testing the API
 
