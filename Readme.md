@@ -11,7 +11,7 @@
 | :--- | :--- |
 | **Blazing Fast Performance** – Native Go runtime efficiency. | **Structured for Scale** – Clean, modular architecture (config, controllers, models, middleware). |
 | **Secure by Default** – JWT authentication, bcrypt hashing, input validation. | **Production-Ready Features** – Rate limiting, CORS, centralized error handling. |
-| **Database Agnostic** – Supports MySQL & PostgreSQL via GORM. | **Go & Gin Mastery** – Demonstrates deep understanding of idiomatic Go and a modern framework. |
+| **Multi Database Support** – Supports MySQL & PostgreSQL via GORM. | **Go & Gin Mastery** – Demonstrates deep understanding of idiomatic Go and a modern framework. |
 | **RESTful Standards** – Predictable, well-documented endpoints for easy integration. | **Minimal & Efficient** – No bloated dependencies; a lean, powerful codebase. |
 
 ## 🛠️ Tech Stack & Architecture
